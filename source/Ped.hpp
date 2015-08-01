@@ -146,7 +146,20 @@ namespace GTA
 		BurstFireBursts = 0x42EF03FD,
 		BurstFireTank = 0xE2CA3A71
 	};
-
+	public enum class PedType : System::Int32
+	{
+		Player = 1,
+		Army = 29,
+		Animal = 28,
+		SWAT = 27,
+		LSFD = 21,
+		Paramedic = 20,
+		Cop = 6,
+		Male = 4,
+		Female = 5,
+		Human = 26,
+		Any =-1,
+	};
 	public ref class Ped sealed : public Entity
 	{
 	public:
@@ -381,6 +394,10 @@ namespace GTA
 		property bool IsSprinting
 		{
 			bool get();
+		}
+		property GTA::PedType PedType
+		{
+			GTA::PedType get();
 		}
 		property int RelationshipGroup
 		{

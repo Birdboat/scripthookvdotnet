@@ -12,6 +12,7 @@ namespace GTA
 	ref class Prop;
 	ref class Rope;
 	ref class Vehicle;
+	enum class PedType;
 	value class Model;
 	value class RaycastResult;
 
@@ -168,6 +169,7 @@ namespace GTA
 		static array<Prop ^> ^GetAllProps();
 		static array<Entity ^> ^GetAllEntities();
 		static Ped ^GetClosestPed(Math::Vector3 position, float radius);
+		static Ped ^GetClosestPed(Math::Vector3 position, float radius, GTA::PedType);
 		static Vehicle ^GetClosestVehicle(Math::Vector3 position, float radius);
 		static float GetDistance(Math::Vector3 origin, Math::Vector3 destination);
 		static float GetGroundHeight(Math::Vector2 position);

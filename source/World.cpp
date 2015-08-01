@@ -269,6 +269,17 @@ namespace GTA
 
 		return gcnew Ped(handle);
 	}
+	Ped ^World::GetClosestPed(Math::Vector3 position, float radius, GTA::PedType type)
+	{
+		int handle = 0;
+
+		if (!Native::Function::Call<bool>(Native::Hash::GET_CLOSEST_PED, position.X, position.Y, position.Z, radius, true, true, &handle, false, false, static_cast<int>(type)))
+		{
+			return nullptr;
+		}
+
+		return gcnew Ped(handle);
+	}
 	Vehicle ^World::GetClosestVehicle(Math::Vector3 position, float radius)
 	{
 		return Native::Function::Call<Vehicle ^>(Native::Hash::GET_CLOSEST_VEHICLE, position.X, position.Y, position.Z, radius, 0, 70); // Last parameter still unknown.

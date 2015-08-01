@@ -261,6 +261,10 @@ namespace GTA
 	{
 		return Native::Function::Call<bool>(Native::Hash::IS_PED_SPRINTING, this->Handle);
 	}
+	GTA::PedType Ped::PedType::get()
+	{
+		return static_cast<GTA::PedType>(Native::Function::Call<int>(Native::Hash::GET_PED_TYPE, this->Handle));
+	}
 	int Ped::RelationshipGroup::get()
 	{
 		return Native::Function::Call<int>(Native::Hash::GET_PED_RELATIONSHIP_GROUP_HASH, this->Handle);
